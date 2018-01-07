@@ -12,7 +12,7 @@ public class GroupCreationTest extends TestBase{
         goToGroupsPage();
         int before = wd.findElements(By.name("selected[]")).size();
         initGroupCreation();
-        fillGroupForm(new GroupData("name", "header", "footer"));
+        fillGroupForm(new GroupData("A", "H", "F"));
         submitGroupCreation();
         returnToGroupsPage();
         int after = wd.findElements(By.name("selected[]")).size();
