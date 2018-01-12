@@ -67,4 +67,8 @@ public class ContactHelper extends HelperBase {
     public void createContactTest() {
         click(By.linkText("add new"));
     }
+
+//    public void confirmAlert() {
+//        wd.switchTo().alert().accept();
+//    }
 }
