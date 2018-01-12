@@ -8,13 +8,13 @@ public class GroupCreationTest extends TestBase{
 
     @Test
     public void GroupCreationTest() {
-        app.goToGroupsPage();
-        int before = app.getGroupCount();
-        app.initGroupCreation();
-        app.fillGroupForm(new GroupData("A", "H", "F"));
-        app.submitGroupCreation();
-        app.returnToGroupsPage();
-        int after = app.getGroupCount();
+        app.getNavigationHelper().goToGroupsPage();
+        int before = app.getGroupHelper().getGroupCount();
+        app.getGroupHelper().initGroupCreation();
+        app.getGroupHelper().fillGroupForm(new GroupData("A", "H", "F"));
+        app.getGroupHelper().submitGroupCreation();
+        app.getGroupHelper().returnToGroupsPage();
+        int after = app.getGroupHelper().getGroupCount();
         Assert.assertEquals(after,before+1);
     }
 

@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AddressBook-Test.iml" filepath="$PROJECT_DIR$/.idea/modules/AddressBook-Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AddressBook-Test_main.iml" filepath="$PROJECT_DIR$/.idea/modules/AddressBook-Test_main.iml" group="AddressBook-Test" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AddressBook-Test_test.iml" filepath="$PROJECT_DIR$/.idea/modules/AddressBook-Test_test.iml" group="AddressBook-Test" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AntonQA12-AddressBook-Test.iml" filepath="$PROJECT_DIR$/.idea/modules/AntonQA12-AddressBook-Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AntonQA12-AddressBook-Test_main.iml" filepath="$PROJECT_DIR$/.idea/modules/AntonQA12-AddressBook-Test_main.iml" group="AddressBook-Test" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AntonQA12-AddressBook-Test_test.iml" filepath="$PROJECT_DIR$/.idea/modules/AntonQA12-AddressBook-Test_test.iml" group="AddressBook-Test" />
     </modules>
   </component>
 </project>
