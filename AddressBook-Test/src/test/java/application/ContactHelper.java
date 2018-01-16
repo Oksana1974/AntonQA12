@@ -2,24 +2,16 @@ package application;
 
 import model.ContactData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 
 public class ContactHelper extends HelperBase {
 
-    public ContactHelper(FirefoxDriver wd) {
+    public ContactHelper(WebDriver wd) {
         super(wd);
     }
 
-    public int getContactCount() {
-        return wd.findElements(By.xpath("//*[@title='Edit']")).size();
-    }
-
-    public void initContactDeletion() {
-        click(By.xpath("//*[@value='Delete']"));
-    }
-
-    public void selectContact() {
-        click(By.xpath("//*[@title='Edit']"));
+    public void createContactTest() {
+        click(By.linkText("add new"));
     }
 
     public void fillContactForm(ContactData contactData) {
@@ -64,11 +56,16 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//div[@id='content']/form/input[21]"));
     }
 
-    public void createContactTest() {
-        click(By.linkText("add new"));
+    public void initContactDeletion() {
+        click(By.xpath("//*[@value='Delete']"));
     }
 
-//    public void confirmAlert() {
-//        wd.switchTo().alert().accept();
-//    }
+    public void selectContact() {
+        click(By.xpath("//*[@title='Edit']"));
+    }
+
+    public int getContactCount() {
+        return wd.findElements(By.xpath("//*[@title='Edit']")).size();
+    }
+
 }

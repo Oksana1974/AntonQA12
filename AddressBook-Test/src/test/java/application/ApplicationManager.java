@@ -1,49 +1,46 @@
 package application;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager  {
-    FirefoxDriver wd;
+    WebDriver wd;
 
     public GroupHelper groupHelper;
     public NavigationHelper navigationHelper;
     public ContactHelper contactHelper;
+    public SessionHelper sessionHelper;
+    private String browser;
 
-    public static boolean isAlertPresent(FirefoxDriver wd) {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
+    public ApplicationManager(String browser) {
+        this.browser = browser;
     }
 
+
     public void start() {
-        wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
+        if (browser.equals(BrowserType.FIREFOX)) {
+            wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
+        } else
+            if (browser.equals(BrowserType.CHROME)) {
+            wd = new ChromeDriver();
+        }else
+            if(browser.equals(BrowserType.IE)){
+            wd = new InternetExplorerDriver();
+    }
         wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        openAddressBook();
+        sessionHelper = new SessionHelper(wd);
+        sessionHelper.openAddressBook("http://localhost/addressbook/");
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         contactHelper = new ContactHelper(wd);
-        login("admin", "secret");
+        sessionHelper.login("admin", "secret");
     }
-
-    public void login(String userName, String userPass) {
-        groupHelper.type(By.name("user"), userName);
-        groupHelper.type(By.name("pass"), userPass);
-        groupHelper.click(By.xpath("//*[@type='submit']"));
-    }
-
-    public void openAddressBook() {
-        wd.get("http://localhost/addressbook/");
-    }
-
-
 
     public void stop() {
         wd.quit();
@@ -61,5 +58,9 @@ public class ApplicationManager  {
 
     public ContactHelper getContactHelper() {
         return contactHelper;
+    }
+
+    public SessionHelper getSessionHelper() {
+        return sessionHelper;
     }
 }
