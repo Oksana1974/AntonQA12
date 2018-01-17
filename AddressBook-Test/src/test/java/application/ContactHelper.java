@@ -68,4 +68,7 @@ public class ContactHelper extends HelperBase {
         return wd.findElements(By.xpath("//*[@title='Edit']")).size();
     }
 
+    public void updateContact() {
+        click(By.name("update"));
+    }
 }

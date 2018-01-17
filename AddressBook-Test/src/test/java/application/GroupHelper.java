@@ -40,4 +40,11 @@ public class GroupHelper extends HelperBase {
         return wd.findElements(By.name("selected[]")).size();
     }
 
+    public void initGroupModification() {
+        click(By.name("edit"));
+    }
+
+    public void confirmGroupModification() {
+        click(By.name("update"));
+    }
 }
