@@ -33,7 +33,7 @@ public class ApplicationManager  {
             if(browser.equals(BrowserType.IE)){
             wd = new InternetExplorerDriver();
     }
-        wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         sessionHelper = new SessionHelper(wd);
         sessionHelper.openAddressBook("http://localhost/addressbook/");
         groupHelper = new GroupHelper(wd);

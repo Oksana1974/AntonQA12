@@ -64,11 +64,27 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//*[@title='Edit']"));
     }
 
+    public void selectContactByIndex(int index) {
+        wd.findElements(By.xpath("//*[@title='Edit']")).get(index).click();
+
+    }
+
     public int getContactCount() {
         return wd.findElements(By.xpath("//*[@title='Edit']")).size();
     }
 
     public void updateContact() {
         click(By.name("update"));
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.xpath("//*[@title='Edit']"));
+    }
+
+    public void createContact(ContactData contact) {
+        createContactTest();
+        fillContactForm(contact);
+        submitContactCreation();
+
     }
 }

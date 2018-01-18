@@ -32,6 +32,10 @@ public class GroupHelper extends HelperBase {
         click(By.name("selected[]"));
     }
 
+    public void selectGroupByIndex(int index) {
+        wd.findElements(By.name("selected[]")).get(index).click();
+    }
+
     public void initGroupsDeletion() {
         click(By.name("delete"));
     }
@@ -46,5 +50,16 @@ public class GroupHelper extends HelperBase {
 
     public void confirmGroupModification() {
         click(By.name("update"));
+    }
+
+    public boolean isThereAGroup() {
+        return isElementPresent(By.name("selected[]"));
+    }
+
+    public void createGroup(GroupData group) {
+        initGroupCreation();
+        fillGroupForm(group);
+        submitGroupCreation();
+        returnToGroupsPage();
     }
 }
