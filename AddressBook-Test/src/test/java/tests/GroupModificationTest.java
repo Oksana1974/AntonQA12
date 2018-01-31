@@ -8,16 +8,23 @@ import org.testng.annotations.Test;
 
         @Test
         public void testGroupModify(){
-            app.getNavigationHelper().goToGroupsPage();
-            if(!app.getGroupHelper().isThereAGroup()){
-                app.getGroupHelper()
-                        .createGroup(new GroupData("e", null, "l"));
+            app.goTo().groupsPage();
+            if(!app.groups().isThereAGroup()){
+                app.groups()
+                        .createGroup(new GroupData()
+                                .withName("e")
+                                .withHeader(null)
+                                .withFooter("l"));
             }
-            app.getGroupHelper().selectGroup();
-            app.getGroupHelper().initGroupModification();
-            app.getGroupHelper().fillGroupForm(new GroupData("", "", ""));
-            app.getGroupHelper().confirmGroupModification();
-            app.getGroupHelper().returnToGroupsPage();
+            int before = app.groups().getGroupCount();
+            app.groups().selectGroupByIndex(before-1);
+            app.groups().initGroupModification();
+            app.groups().fillGroupForm(new GroupData()
+                    .withName("")
+                    .withHeader("")
+                    .withFooter(""));
+            app.groups().confirmGroupModification();
+            app.groups().returnToGroupsPage();
         }
     }
 

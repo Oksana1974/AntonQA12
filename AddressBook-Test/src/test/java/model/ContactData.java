@@ -1,49 +1,27 @@
 package model;
 
 public class ContactData {
-    private final String firstName;
-    private final String midleName;
-    private final String lastName;
-    private final String nickName;
-    private final String title;
-    private final String company;
-    private final String address;
-    private final String home;
-    private final String mobile;
-    private final String work;
-    private final String fax;
-    private final String email;
-    private final String email2;
-    private final String email3;
-    private final String homepage;
-    private final String bYear;
-    private final String aYear;
-    private final String address2;
-    private final String phone2;
-    private final String notes;
+    private String firstName;
+    private String midleName;
+    private String lastName;
+    private String nickName;
+    private String title;
+    private String company;
+    private String address;
+    private String home;
+    private String mobile;
+    private String work;
+    private String fax;
+    private String email;
+    private String email2;
+    private String email3;
+    private String homepage;
+    private String bYear;
+    private String aYear;
+    private String address2;
+    private String phone2;
+    private String notes;
 
-    public ContactData(String firstName, String midleName, String lastName, String nickName, String title, String company, String address, String home, String mobile, String work, String fax, String email, String email2, String email3, String homepage, String bYear, String aYear, String address2, String phone2, String notes) {
-        this.firstName = firstName;
-        this.midleName = midleName;
-        this.lastName = lastName;
-        this.nickName = nickName;
-        this.title = title;
-        this.company = company;
-        this.address = address;
-        this.home = home;
-        this.mobile = mobile;
-        this.work = work;
-        this.fax = fax;
-        this.email = email;
-        this.email2 = email2;
-        this.email3 = email3;
-        this.homepage = homepage;
-        this.bYear = bYear;
-        this.aYear = aYear;
-        this.address2 = address2;
-        this.phone2 = phone2;
-        this.notes = notes;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -123,5 +101,107 @@ public class ContactData {
 
     public String getNotes() {
         return notes;
+    }
+
+
+
+    public ContactData withFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public ContactData withMidleName(String midleName) {
+        this.midleName = midleName;
+        return this;
+    }
+
+    public ContactData withLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public ContactData withNickName(String nickName) {
+        this.nickName = nickName;
+        return this;
+    }
+
+    public ContactData withTitle(String title) {
+        this.title = title;
+        return this;
+    }
+
+    public ContactData withCompany(String company) {
+        this.company = company;
+        return this;
+    }
+
+    public ContactData withAddress(String address) {
+        this.address = address;
+        return this;
+    }
+
+    public ContactData withHome(String home) {
+        this.home = home;
+        return this;
+    }
+
+    public ContactData withMobile(String mobile) {
+        this.mobile = mobile;
+        return this;
+    }
+
+    public ContactData withWork(String work) {
+        this.work = work;
+        return this;
+    }
+
+    public ContactData withFax(String fax) {
+        this.fax = fax;
+        return this;
+    }
+
+    public ContactData withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public ContactData withEmail2(String email2) {
+        this.email2 = email2;
+        return this;
+    }
+
+    public ContactData withEmail3(String email3) {
+        this.email3 = email3;
+        return this;
+    }
+
+    public ContactData withHomepage(String homepage) {
+        this.homepage = homepage;
+        return this;
+    }
+
+    public ContactData withbYear(String bYear) {
+        this.bYear = bYear;
+        return this;
+    }
+
+    public ContactData withaYear(String aYear) {
+        this.aYear = aYear;
+        return this;
+    }
+
+    public ContactData withAddress2(String address2) {
+        this.address2 = address2;
+        return this;
+    }
+
+    public ContactData withPhone2(String phone2) {
+        this.phone2 = phone2;
+        return this;
+    }
+
+    public ContactData withNotes(String notes) {
+        this.notes = notes;
+        return this;
     }
 }

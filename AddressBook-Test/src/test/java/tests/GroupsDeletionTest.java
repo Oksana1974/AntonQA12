@@ -8,16 +8,19 @@ public class GroupsDeletionTest extends TestBase{
 
     @Test
     public void GroupsDeletionTest() {
-        app.getNavigationHelper().goToGroupsPage();
-        if(!app.getGroupHelper().isThereAGroup()){
-            app.getGroupHelper()
-                    .createGroup(new GroupData("e", null, "l"));
+        app.goTo().groupsPage();
+        if(!app.groups().isThereAGroup()){
+            app.groups()
+                    .createGroup(new GroupData()
+                            .withName("e")
+                            .withHeader(null)
+                            .withFooter("l"));
         }
-        int before = app.getGroupHelper().getGroupCount();
-        app.getGroupHelper().selectGroupByIndex(before-1);
-        app.getGroupHelper().initGroupsDeletion();
-        app.getGroupHelper().returnToGroupsPage();
-        int after = app.getGroupHelper().getGroupCount();
+        int before = app.groups().getGroupCount();
+        app.groups().selectGroupByIndex(before-1);
+        app.groups().initGroupsDeletion();
+        app.groups().returnToGroupsPage();
+        int after = app.groups().getGroupCount();
         Assert.assertEquals(after,before-1);
     }
 
