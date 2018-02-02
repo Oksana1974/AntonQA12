@@ -1,6 +1,9 @@
 package model;
 
+import java.util.Objects;
+
 public class ContactData {
+    private int id;
     private String firstName;
     private String midleName;
     private String lastName;
@@ -104,6 +107,14 @@ public class ContactData {
     }
 
 
+    public int getId() {
+        return id;
+    }
+
+    public ContactData withId(int id) {
+        this.id = id;
+        return this;
+    }
 
     public ContactData withFirstName(String firstName) {
         this.firstName = firstName;
@@ -203,5 +214,30 @@ public class ContactData {
     public ContactData withNotes(String notes) {
         this.notes = notes;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "ContactData{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ContactData that = (ContactData) o;
+        return id == that.id &&
+                Objects.equals(firstName, that.firstName) &&
+                Objects.equals(lastName, that.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, firstName, lastName);
     }
 }

@@ -4,14 +4,18 @@ import model.ContactData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class ContactsCreationTest extends TestBase{
 
     @Test
     public void ContactsCreationTest() {
         app.goTo().contactsPage();
-        int before = app.contacts().getContactCount();
+//        int before = app.contacts().getContactCount();
+        List<ContactData> before = app.contacts().getContactList();
         app.contacts().createContactTest();
-        app.contacts().fillContactForm(new ContactData().withFirstName("A")
+        app.contacts().fillContactForm(new ContactData()
+                .withFirstName("Test")
                 .withLastName("B")
                 .withNickName("C")
                 .withAddress("D")
@@ -32,8 +36,9 @@ public class ContactsCreationTest extends TestBase{
                 .withTitle("")
                 .withWork(""));
         app.contacts().submitContactCreation();
-        int after = app.contacts().getContactCount();
-        Assert.assertEquals(after, before+1);
+//        int after = app.contacts().getContactCount();
+        List<ContactData> after = app.contacts().getContactList();
+        Assert.assertEquals(after.size(), before.size()+1);
     }
 
 }

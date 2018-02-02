@@ -1,8 +1,13 @@
 package application;
 
 import model.ContactData;
+import model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactHelper extends HelperBase {
 
@@ -64,7 +69,7 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//*[@title='Edit']"));
     }
 
-    public void selectContactByIndex(int index) {
+    public void selectAndModifyContactByIndex(int index) {
         wd.findElements(By.xpath("//*[@title='Edit']")).get(index).click();
 
     }
@@ -86,5 +91,29 @@ public class ContactHelper extends HelperBase {
         fillContactForm(contact);
         submitContactCreation();
 
+    }
+
+//    public List<ContactData> getContactList() {
+////        List<ContactData> contacts = new ArrayList<>();
+////        List<WebElement> elements = wd.findElements(By.cssSelector("td.center"));
+////        for (WebElement element : elements) {
+////            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+////            ContactData contact = new ContactData();
+////            contacts.add(contact);
+////        }
+////        return contacts;
+////    }
+
+    public List<ContactData> getContactList() {
+        List<ContactData> contacts = new ArrayList<>();
+        List<WebElement> elements = wd.findElements(By.name("entry"));
+        for (WebElement element : elements){
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));
+            String lastName = element.findElement(By.xpath(".//td[2]")).getText();
+            String firstName = element.findElement(By.xpath(".//td[3]")).getText();
+            ContactData contact = new ContactData().withId(id).withLastName(lastName).withFirstName(firstName);
+            contacts.add(contact);
+        }
+        return contacts;
     }
 }
