@@ -1,10 +1,10 @@
 package application;
 
 import model.ContactData;
-import model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +35,7 @@ public class ContactHelper extends HelperBase {
         type(By.name("email2"), contactData.getEmail2());
         type(By.name("email3"), contactData.getEmail3());
         type(By.name("homepage"), contactData.getHomepage());
+
 //        if (!wd.findElement(By.xpath("//div[@id='content']/form/select[1]//option[14]")).isSelected()) {
 //            click(By.xpath("//div[@id='content']/form/select[1]//option[14]"));
 //        }
@@ -55,6 +56,11 @@ public class ContactHelper extends HelperBase {
         type(By.name("address2"), contactData.getAddress2());
         type(By.name("phone2"), contactData.getPhone2());
         type(By.name("notes"), contactData.getNotes());
+        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+        new Select(wd.findElement(By.name("bday"))).selectByVisibleText(contactData.getbDay());
+        new Select(wd.findElement(By.name("bmonth"))).selectByVisibleText(contactData.getbMonth());
+        new Select(wd.findElement(By.name("aday"))).selectByVisibleText(contactData.getaDay());
+        new Select(wd.findElement(By.name("amonth"))).selectByVisibleText(contactData.getaMonth());
     }
 
     public void submitContactCreation() {

@@ -10,7 +10,7 @@ import java.util.List;
 public class GroupModificationTest extends TestBase {
 
         @Test
-        public void testGroupModify(){
+        public void groupModificationTest(){
             app.goTo().groupsPage();
             if(!app.groups().isThereAGroup()){
                 app.groups()

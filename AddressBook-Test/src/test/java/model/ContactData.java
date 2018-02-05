@@ -24,7 +24,11 @@ public class ContactData {
     private String address2;
     private String phone2;
     private String notes;
-
+    private String group;
+    private String bDay;
+    private String bMonth;
+    private String aDay;
+    private String aMonth;
 
     public String getFirstName() {
         return firstName;
@@ -109,6 +113,52 @@ public class ContactData {
 
     public int getId() {
         return id;
+    }
+
+
+    public String getGroup() {
+        return group;
+    }
+
+    public String getbDay() {
+        return bDay;
+    }
+
+    public String getbMonth() {
+        return bMonth;
+    }
+
+    public ContactData withbMonth(String bMonth) {
+        this.bMonth = bMonth;
+        return this;
+    }
+
+    public String getaDay() {
+        return aDay;
+    }
+
+    public ContactData withaDay(String aDay) {
+        this.aDay = aDay;
+        return this;
+    }
+
+    public String getaMonth() {
+        return aMonth;
+    }
+
+    public ContactData withaMonth(String aMonth) {
+        this.aMonth = aMonth;
+        return this;
+    }
+
+    public ContactData withbDay(String BDay) {
+        this.bDay = BDay;
+        return this;
+    }
+
+    public ContactData withGroup(String group) {
+        this.group = group;
+        return this;
     }
 
     public ContactData withId(int id) {
