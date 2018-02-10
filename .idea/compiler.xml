@@ -6,6 +6,8 @@
       <module name="AddressBook-Test_test" target="1.8" />
       <module name="AntonQA12-AddressBook-Test_main" target="1.8" />
       <module name="AntonQA12-AddressBook-Test_test" target="1.8" />
+      <module name="TestNg-test_main" target="1.8" />
+      <module name="TestNg-test_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

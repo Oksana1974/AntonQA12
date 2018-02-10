@@ -8,6 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AntonQA12-AddressBook-Test.iml" filepath="$PROJECT_DIR$/.idea/modules/AntonQA12-AddressBook-Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AntonQA12-AddressBook-Test_main.iml" filepath="$PROJECT_DIR$/.idea/modules/AntonQA12-AddressBook-Test_main.iml" group="AddressBook-Test" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AntonQA12-AddressBook-Test_test.iml" filepath="$PROJECT_DIR$/.idea/modules/AntonQA12-AddressBook-Test_test.iml" group="AddressBook-Test" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TestNg-test.iml" filepath="$PROJECT_DIR$/.idea/modules/TestNg-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TestNg-test_main.iml" filepath="$PROJECT_DIR$/.idea/modules/TestNg-test_main.iml" group="TestNg-test" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TestNg-test_test.iml" filepath="$PROJECT_DIR$/.idea/modules/TestNg-test_test.iml" group="TestNg-test" />
     </modules>
   </component>
 </project>
