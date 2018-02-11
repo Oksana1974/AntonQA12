@@ -72,4 +72,51 @@ public class ContactsCreationTest extends TestBase{
         Assert.assertEquals(after.size(), before.size()+1);
     }
 
+    @Test
+    public void ContactsCreationTestWithPhoto() {
+        app.goTo().contactsPage();
+//        int before = app.contacts().getContactCount();
+        List<ContactData> before = app.contacts().getContactList();
+        app.contacts().createContactTest();
+        File photo = new File("src/test/resources/photo.jpg");
+        app.contacts().fillContactForm(new ContactData()
+                .withFirstName("Test3")
+                .withLastName("TestG3")
+                .withPhoto(photo)
+        );
+//                .withNickName("C")
+//                .withAddress("D")
+//                .withAddress2("E")
+//                .withaYear("1981")
+//                .withbYear("1996")
+//                .withCompany("DFG")
+//                .withEmail("")
+//                .withEmail2("")
+//                .withEmail3("")
+//                .withFax("")
+//                .withHome("")
+//                .withHomepage("")
+//                .withMidleName("")
+//                .withMobile("567")
+//                .withNotes("")
+//                .withPhone2("678")
+//                .withTitle("")
+//                .withWork("")
+//                .withGroup("Test")
+//                .withbDay("4")
+//                .withbMonth("May")
+//                .withaDay("20")
+//                .withaMonth("May"));
+        app.contacts().submitContactCreation();
+//        int after = app.contacts().getContactCount();
+        List<ContactData> after = app.contacts().getContactList();
+        Assert.assertEquals(after.size(), before.size()+1);
+    }
+
+    @Test
+    public void getCurrentURL(){
+        File curr = new File(".");
+        System.out.println(curr.getAbsolutePath());
+    }
+
 }

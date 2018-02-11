@@ -1,8 +1,10 @@
 package model;
 
+import java.io.File;
 import java.util.Objects;
 
 public class ContactData {
+    private File photo;
     private int id;
     private String firstName;
     private String midleName;
@@ -29,6 +31,15 @@ public class ContactData {
     private String bMonth;
     private String aDay;
     private String aMonth;
+
+    public File getPhoto() {
+        return photo;
+    }
+
+    public ContactData withPhoto(File photo) {
+        this.photo = photo;
+        return this;
+    }
 
     public String getFirstName() {
         return firstName;

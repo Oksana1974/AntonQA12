@@ -61,6 +61,7 @@ public class ContactHelper extends HelperBase {
 //        new Select(wd.findElement(By.name("bmonth"))).selectByVisibleText(contactData.getbMonth());
 //        new Select(wd.findElement(By.name("aday"))).selectByVisibleText(contactData.getaDay());
 //        new Select(wd.findElement(By.name("amonth"))).selectByVisibleText(contactData.getaMonth());
+        attach(By.name("photo"),contactData.getPhoto());
     }
 
     public void submitContactCreation() {
